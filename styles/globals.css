@@ -1,9 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: poppins, sans-serif;
 }
 
 a {
@@ -13,4 +16,18 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.spot {
+  width: 5.2px;
+  height: 5.2px;
+  background-color: #00bfcc;
+  border-radius: 50%;
+  position: absolute;
+  left: 5.4px;
+  top: 9.7px;
+}
+
+.color {
+  color: #00bfcc;
 }
