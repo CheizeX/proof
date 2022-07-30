@@ -45,8 +45,8 @@ export const Card: FC<IProps> = ({ quantity }) => {
               </div>
               <div className="flex items-center justify-between w-full text-[8px] font-[400] opacity-50 text-gray_5">
                 <h3 className="mr-2">
-                  Takes {item.takeTime * (quantity + 1)}{' '}
-                  {item.takeTime * (quantity + 1) > 1 ? 'hours' : 'hour'}
+                  Takes {item.takeTime * quantity}{' '}
+                  {item.takeTime * quantity > 1 ? 'hours' : 'hour'}
                 </h3>
                 <h3 className="flex items-center h-[8px] w-auto">
                   <div className="little-spot self-end" />
