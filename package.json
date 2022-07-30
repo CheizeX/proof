@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "suav-beauty",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,9 @@
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
-    "lint": "eslint . --ext ts --ext tsx --ext js"
+    "prepare": "husky install",
+    "lint": "next lint",
+    "precommit": "lint-staged"
   },
   "husky": {
     "hooks": {
