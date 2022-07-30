@@ -16,9 +16,13 @@ module.exports = {
         gray_2: '#E2E2E2',
         gray_3: '#ADADAD',
         gray_4: '#777777',
+        gray_5: '#2B2B2B',
         turquoise: '#00BFCC',
       },
     },
+  },
+  variants: {
+    extend: {},
   },
   plugins: [require('flowbite/plugin')],
 };
