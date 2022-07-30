@@ -19,9 +19,6 @@ module.exports = {
         turquoise: '#00BFCC',
       },
     },
-    variants: {
-      outline: ['focus'],
-    },
   },
   plugins: [require('flowbite/plugin')],
 };
