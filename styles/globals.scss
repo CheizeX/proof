@@ -97,20 +97,159 @@ a {
     }
   }
 }
+.shadowModal {
+  box-shadow: 0px -2px 15px 3px rgba(0, 0, 0, 0.1);
+}
 
-// .modal {
-//   background: #000000;
-//   opacity: 0.1;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   z-index: 5;
-//   backdrop-filter: blur(3px);
-//   box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.5);
-//   & > button {
-//     color: red;
-//     z-index: 6;
-//   }
-// }
+.customSlider {
+  max-width: 300px;
+  margin: auto;
+}
+
+.customSlider-track {
+  top: 8px;
+  height: 4px;
+  background: var(--track-color);
+}
+
+.customSlider-track.customSlider-track-0 {
+  background: var(--main-color);
+}
+
+.customSlider-thumb {
+  cursor: pointer;
+  /*color for the thumb */
+  background: var(--main-color);
+  /* shape of the thumb: circle */
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  /* remove default outline when selected */
+  outline: none;
+}
+
+.customSlider-thumb:hover {
+  box-shadow: 0 0 0 8px var(--main-color-hover);
+}
+
+.customSlider-mark {
+  cursor: pointer;
+  top: 6px;
+  width: 1.5px;
+  height: 8px;
+  background-color: var(--mark-color);
+}
+
+.customSlider-mark.customSlider-mark-before {
+  background-color: var(--main-color);
+}
+
+.customSlider-mark.customSlider-mark-active {
+  display: none;
+}
+
+.input-cont {
+  input[type='range'] {
+    height: 21px;
+    -webkit-appearance: none;
+    // margin: 10px 0;
+    width: 100%;
+  }
+  input[type='range']:focus {
+    outline: none;
+  }
+  input[type='range']::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000;
+    background: #000000;
+    border-radius: 0px;
+    border: 0px solid #000000;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    background: #00bfcc;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+  }
+  input[type='range']:focus::-webkit-slider-runnable-track {
+    background: #000000;
+  }
+  input[type='range']::-moz-range-track {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #000000;
+    border-radius: 0px;
+    border: 0px solid #000000;
+  }
+  input[type='range']::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    background: #00bfcc;
+    cursor: pointer;
+  }
+  input[type='range']::-ms-track {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type='range']::-ms-fill-lower {
+    background: #000000;
+    border: 0px solid #000000;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  input[type='range']::-ms-fill-upper {
+    background: #000000;
+    border: 0px solid #000000;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  input[type='range']::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    background: #00bfcc;
+    cursor: pointer;
+  }
+  input[type='range']:focus::-ms-fill-lower {
+    background: #000000;
+  }
+  input[type='range']:focus::-ms-fill-upper {
+    background: #000000;
+  }
+  & > div {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    z-index: auto;
+    & > option {
+      color: #00bfcc;
+      font-size: 14px;
+      z-index: auto;
+    }
+  }
+}

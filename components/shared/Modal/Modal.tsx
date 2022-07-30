@@ -1,4 +1,4 @@
-import React, { Dispatch } from 'react';
+import React, { Dispatch, useState } from 'react';
 import { FC } from 'react';
 import { SetStateAction } from 'react';
 
@@ -6,12 +6,45 @@ interface IPropsModal {
   activeModal: string;
   setActiveModal: Dispatch<SetStateAction<string>>;
 }
-export const Modal: FC<IPropsModal> = ({ setActiveModal }) => {
+export const Modal: FC<IPropsModal> = ({ activeModal, setActiveModal }) => {
+  const [currentValue, setCurrentValue] = useState('0');
+
   return (
-    <div className="absolute top-0 left-0 right-0 bottom-0 z-10 backdrop-blur-[1px] backdrop-saturate-10 backdrop-opacity-0_9">
-      <button type="button" onClick={() => setActiveModal('')}>
-        CERRAR
-      </button>
+    <div className="absolute top-0 left-0 right-0 bottom-0 z-10 backdrop-blur-[1px] backdrop-saturate-10 backdrop-opacity-0_9 transition duration-500 cubic-bezier-0.2">
+      <div
+        className={`absolute flex flex-col justify-start items-center ${
+          activeModal === 'price' ? 'bottom-[0px]' : 'bottom-[-580px]'
+        } h-[271px] w-full bg-[#ffffff] rounded-t-[20px] shadowModal transition duration-500 all-ease-in-out`}
+      >
+        <div className="min-h-[54px] w-full border-b flex items-center justify-center capitalize text-[18px] font-bold text-gray_5">
+          {activeModal}
+        </div>
+        <div className="border h-full w-full flex flex-col justify-between items-center pl-4 pr-4 pt-6 pb-6">
+          <div className="flex justify-center items-center font-semibold text-base">
+            USD
+            <div className=" text-turquoise ml-2">{currentValue}</div>
+          </div>
+          <div className="input-cont w-full relative">
+            <input
+              type="range"
+              min="0"
+              max="1000"
+              step="100"
+              defaultValue="100"
+              className="w-full inputtt"
+              onChange={(e) => setCurrentValue(e.target.value)}
+              list="tickmarks"
+            />
+          </div>
+          <button
+            type="button"
+            onClick={() => setActiveModal('')}
+            className="relative rounded-lg bg-turquoise bg-opacity-10 w-[120px] h-[40px] text-turquoise"
+          >
+            Apply
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
