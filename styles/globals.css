@@ -19,15 +19,19 @@ a {
 }
 
 .spot {
-  width: 5.2px;
-  height: 5.2px;
+  width: 6px;
+  height: 6px;
   background-color: #00bfcc;
   border-radius: 50%;
   position: absolute;
-  left: 5.4px;
-  top: 9.7px;
+  left: 27px;
+  top: 9px;
 }
 
 .color {
   color: #00bfcc;
+}
+.outlineno::selection {
+  /* sacar el borde del input */
+  background: transparent;
 }

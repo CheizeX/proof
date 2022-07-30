@@ -9,9 +9,9 @@ export const Navbar: FC = () => {
         SUAV BEAUTY
       </div>
       <div className=" h-[27px] w-[172px] flex items-center relative">
-        <GrLocation className="location-icon mr-6" />
+        <GrLocation className="location-icon mr-2 ml-[22px]" />
         <div className="spot" />
-        <select className="w-[80px] text-[10px]" disabled>
+        <select className="w-[90px] text-[10px] border-none m-0 p-0" disabled>
           <option value="1">Set Location</option>
           <option value="1">Rosario</option>
           <option value="2">Buenos Aires</option>
