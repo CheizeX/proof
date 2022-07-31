@@ -12,7 +12,7 @@ export const Filters: FC<Props> = ({ setActiveModal }) => {
         type="button"
         className="flex items-center justify-between border bg-white text-[10px] text-center text-gray_4 rounded h-[35px] w-[90px] pl-[8px] pr-[12px] mr-[10px]"
       >
-        Expertize
+        Expertise
         <FaChevronDown size={12} color="#2B2B2B" />
       </button>
       <button

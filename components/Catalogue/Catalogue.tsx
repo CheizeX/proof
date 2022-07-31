@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { IFiltersProps } from '../Filters/filters.interface';
 import { Card } from './shared/Card';
+import { objItems } from './shared/objItems';
 
-export const Catalogue = () => {
+interface IProps {
+  filters: IFiltersProps;
+}
+
+export const Catalogue: FC<IProps> = ({ filters }) => {
   return (
     <div className="container h-full overflow-auto scroll-smooth hover:scroll-auto overflowHideScroll">
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-        <Card quantity={item} key={item.toString()} />
-      ))}
+      {objItems
+        .filter((item) => item.price >= Number(filters.byPrice))
+        .map((item, index) => (
+          <Card quantity={index + 1} key={index.toString()} item={item} />
+        ))}
     </div>
   );
 };
