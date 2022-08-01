@@ -39,7 +39,11 @@ const Home: NextPage<IFiltersProps> = () => {
         <section className="container h-[167px] relative p-[18px] pt-[11px] shadow-[0_2px_3px_#B7B7B74D]">
           <Tabs />
           <Search />
-          <Filters setActiveModal={setActiveModal} />
+          <Filters
+            setActiveModal={setActiveModal}
+            filters={filters}
+            setFilters={setFilters}
+          />
         </section>
         <section className="container flex justify-start items-center h-fit p-[12px] pb-0 pt-0 overflow-hidden">
           <Catalogue filters={filters} />
