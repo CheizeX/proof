@@ -64,10 +64,10 @@ export const Card: FC<IProps> = ({ quantity, item }) => {
             </button>
             <button
               type="button"
-              className="flex items-center justify-center bg-turquoise rounded text-gray_1 h-[25px] w-[80px] text-center"
+              className="flex items-center justify-center bg-turquoise bg-opacity-10 rounded text-gray_1 h-[25px] w-[80px] text-center"
             >
-              <IoIosChatbubbles size={12} />
-              <span className="ml-2">Chat</span>
+              <IoIosChatbubbles size={12} className="text-turquoise" />
+              <span className="ml-2 text-turquoise">Chat</span>
             </button>
           </div>
         </Fragment>

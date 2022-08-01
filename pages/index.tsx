@@ -15,6 +15,7 @@ const Home: NextPage<IFiltersProps> = () => {
 
   const [activeModal, setActiveModal] = useState('');
   const [filters, setFilters] = useState<IFiltersProps>({
+    currentSection: 'home',
     byPrice: '0',
     byExpertise: '0',
     byCategory: '',
@@ -40,12 +41,11 @@ const Home: NextPage<IFiltersProps> = () => {
           <Search />
           <Filters setActiveModal={setActiveModal} />
         </section>
-        <div ref={topCatalogueRef} />
-        <section className="container flex justify-start items-center h-full p-[12px] pb-0 pt-0 overflow-hidden">
+        <section className="container flex justify-start items-center h-fit p-[12px] pb-0 pt-0 overflow-hidden">
           <Catalogue filters={filters} />
         </section>
         <footer className="container flex justify-around items-center min-h-[60px] shadow-[0_-2px_3px_#B7B7B74D]">
-          <Footer />
+          <Footer filters={filters} setFilters={setFilters} />
         </footer>
         {activeModal === 'price' && (
           <Modal

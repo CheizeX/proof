@@ -48,7 +48,7 @@ export const Modal: FC<IPropsModal> = ({
   });
 
   return (
-    <div className="absolute top-0 left-0 right-0 bottom-0 z-10 backdrop-blur-[1px] backdrop-saturate-10 backdrop-opacity-0_9 transition duration-500 cubic-bezier-0.2">
+    <div className="absolute top-0 left-0 right-0 bottom-0 z-10 backdrop-blur-[1.5px] backdrop-saturate-10 backdrop-opacity-0_9 transition duration-500 cubic-bezier-0.2">
       <div
         ref={ref}
         className={`absolute flex flex-col justify-start items-center ${
@@ -58,7 +58,7 @@ export const Modal: FC<IPropsModal> = ({
         <div className="min-h-[54px] w-full border-b flex items-center justify-center capitalize text-[18px] font-bold text-gray_5">
           {activeModal}
         </div>
-        <div className="border h-full w-full flex flex-col justify-between items-center pl-4 pr-4 pt-6 pb-6">
+        <div className="h-full w-full flex flex-col justify-between items-center pl-4 pr-4 pt-6 pb-6">
           <div className="flex justify-center items-center font-semibold text-base">
             USD
             <div className=" text-turquoise ml-2">{currentPrice}</div>
