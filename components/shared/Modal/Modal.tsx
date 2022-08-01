@@ -47,6 +47,25 @@ export const Modal: FC<IPropsModal> = ({
     };
   });
 
+  const rangeInputs = document.querySelectorAll('input[type="range"]');
+
+  const handleInputChange = (e: any) => {
+    let target = e.target;
+    console.log('[target]', target);
+    if (e.target.type !== 'range') {
+      target = document.getElementById('range');
+    }
+    const min = target.min;
+    const max = target.max;
+    const val = target.value;
+
+    target.style.backgroundSize = ((val - min) * 100) / (max - min) + '% 100%';
+  };
+
+  rangeInputs.forEach((input) => {
+    input.addEventListener('input', handleInputChange);
+  });
+
   return (
     <div className="absolute top-0 left-0 right-0 bottom-0 z-10 backdrop-blur-[1.5px] backdrop-saturate-10 backdrop-opacity-0_9 transition duration-500 cubic-bezier-0.2">
       <div
@@ -73,6 +92,11 @@ export const Modal: FC<IPropsModal> = ({
               className="w-full inputtt"
               onChange={(e) => setCurrentPrice(e.target.value)}
               list="tickmarks"
+              style={{
+                backgroundSize: `${
+                  ((Number(currentPrice) - 0) * 100) / (1000 - 0)
+                }% 100%`,
+              }}
             />
           </div>
           <button

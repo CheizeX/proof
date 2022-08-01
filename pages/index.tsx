@@ -48,10 +48,10 @@ const Home: NextPage<IFiltersProps> = () => {
             setFilters={setFilters}
           />
         </section>
-        <section className="container flex justify-start items-center h-fit p-[12px] pb-0 pt-0 overflow-hidden">
+        <section className="container flex justify-start items-center h-full p-[12px] pb-0 pt-0 overflow-hidden">
           <Catalogue filters={filters} />
         </section>
-        <footer className="container flex justify-around items-center min-h-[60px] shadow-[0_-2px_3px_#B7B7B74D]">
+        <footer className="container flex justify-around items-center h-[60px] min-h-[60px] shadow-[0_-2px_3px_#B7B7B74D]">
           <Footer filters={filters} setFilters={setFilters} />
         </footer>
         {activeModal === 'price' && (
