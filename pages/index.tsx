@@ -8,14 +8,17 @@ import { Footer } from '../components/Footer/Footer';
 import { Catalogue } from '../components/Catalogue/Catalogue';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Modal } from '../components/shared/Modal/Modal';
-import { IFiltersProps } from '../components/Filters/filters.interface';
+import {
+  IFiltersProps,
+  TCurrentSection,
+} from '../components/Filters/filters.interface';
 
 const Home: NextPage<IFiltersProps> = () => {
   const topCatalogueRef = useRef<HTMLDivElement>(null);
 
   const [activeModal, setActiveModal] = useState('');
   const [filters, setFilters] = useState<IFiltersProps>({
-    currentSection: 'home',
+    currentSection: TCurrentSection.HOME,
     byPrice: '0',
     byExpertise: '0',
     byCategory: '',

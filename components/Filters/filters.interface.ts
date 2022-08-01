@@ -1,5 +1,10 @@
+export enum TCurrentSection {
+  HOME = 'Home',
+  CHAT = 'Chat',
+  SETTINGS = 'Settings',
+}
 export interface IFiltersProps {
-  currentSection: 'home' | 'chat' | 'settings';
+  currentSection: TCurrentSection;
   byPrice: string;
   byExpertise: string;
   byCategory: string;
